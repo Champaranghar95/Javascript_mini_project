@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home Page</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: linear-gradient(90deg, #161578, #b81055);
+  }
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  .box {
+    width: calc(25% - 20px);
+    margin-bottom: 20px;
+    background-image: linear-gradient(90deg, #a4e3fc, #f5bad3);
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+  }
+
+  .styled-button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition-duration: 0.4s;
+  }
+  
+  .styled-button:hover {
+    background-color: #45a049; /* Darker green */
+  }
+  
+  /* About section */
+  section {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .card {
+    background-image: linear-gradient(90deg, #86ddff, #ff899d);
+    border: 1px solid #0e0d0d;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px; /* Adjust as needed */
+    margin: 0 auto; /* Center horizontally */
+  }
+
+    
+
+
+  #headline{
+    text-align: center;
+  }
+  .box:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  @media (max-width: 768px) {
+    .box {
+      width: calc(50% - 20px);
+    }
+  }
+  @media (max-width: 480px) {
+    .box {
+      width: 100%;
+    }
+  }
+</style>
+</head>
+<body>
+    <h1 id="headline" style="color:rgb(3, 255, 79); font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">JavaScript Mini AI Project</h1>
+
+<div class="container">
+    
+    <div class="box">
+        <h2>Text to voice</h2>
+        <p>"Converts text into lifelike speech with natural intonation and accents."
+            </p>
+        <button class="styled-button" onclick="window.location.href='text_to_voice/index.html'">OPEN</button>
+
+      </div>
+      <div class="box">
+        <h2>AI_ChatBot</h2>
+        <p>An AI chatbot is a computer program designed to simulate conversation with human users</p>
+        <button class="styled-button" onclick="window.location.href='AI_Bot/index.html'">OPEN</button>
+
+      </div>
+      <div class="box">
+        <h2>Password Generator</h2>
+        <p>A password generator creates random, secure passwords to enhance online security.</p>
+        <button class="styled-button" onclick="window.location.href='Password_Generator_App/index.html'">OPEN</button>
+
+      </div>
+      <div class="box">
+        <h2>Quote generator</h2>
+        <p>"Generate memorable quotes effortlessly with this intuitive quote generator tool."</p>
+        <button class="styled-button" onclick="window.location.href='Quote_generator/index.html'">OPEN</button>
+
+      </div> 
+      
+</div>
+
+
+<section>
+    <h2 style="color: rgb(7, 250, 7);">About Us</h2>
+    <div class="card">
+      <h3>Our Project</h3>
+      <p>This is a simple demonstration of a JavaScript mini AI project. The project showcases various AI-related concepts implemented using JavaScript.</p>
+    </div>
+  </section>
+
+</body>
+</html>
+
+
+
+

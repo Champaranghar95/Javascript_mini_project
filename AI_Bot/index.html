@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chatbot Interface</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-image: linear-gradient(90deg, #161578, #b81055);
+    margin: 0;
+    padding: 0;
+}
+
+#headline{
+    text-align: center;
+}
+
+.container {
+    max-width: 600px;
+    margin: 20px auto;
+    background-image: linear-gradient(90deg, #7270ce, #e272a1);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.chat-box {
+    height: 300px;
+    overflow-y: scroll;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+input[type="text"] {
+    width: calc(100% - 80px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    font-size: 16px;
+}
+
+button {
+    width: 80px;
+    padding: 10px;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.clear-btn {
+    margin-top: 10px;
+    background-color: #dc3545;
+}
+</style>
+</head>
+<body>
+
+    <h1 id="headline" style="color:rgb(3, 255, 79); font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">AI Chatbot</h1>
+<div class="container">
+    <div class="chat-box" id="chat-box"></div>
+    <div>
+        <input type="text" id="user-input" placeholder="Type your message...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+    <button class="clear-btn" onclick="clearChat()">Clear Chat</button>
+</div>
+
+<script>
+const chatBox = document.getElementById('chat-box');
+const userInput = document.getElementById('user-input');
+
+function sendMessage() {
+    const message = userInput.value.trim();
+    if (message !== '') {
+        appendMessage('You', message, true);
+        respondToUser(message);
+        userInput.value = '';
+    }
+}
+
+function respondToUser(message) {
+    let response;
+    const greeting = getGreeting(message);
+    if (greeting) {
+        response = greeting;
+    } else if (message.toLowerCase().includes('how are you')) {
+        response = 'I am just a bot, but thanks for asking!';
+    } else if (message.toLowerCase().includes('bye')) {
+        response = 'Goodbye!';
+    } else {
+        response = 'I did not understand that.';
+    }
+    setTimeout(() => appendMessage('Bot', response), 500);
+}
+
+function getGreeting(message) {
+    const greetings = ['hello', 'hi', 'hey'];
+    for (const greeting of greetings) {
+        if (message.toLowerCase().includes(greeting)) {
+            return `Hello! How can I assist you today?`;
+        }
+    }
+    return null;
+}
+
+function appendMessage(sender, message, withTimestamp = false) {
+    const messageElement = document.createElement('div');
+    const timestamp = withTimestamp ? getTimeStamp() : '';
+    messageElement.innerHTML = `<strong>${sender}:</strong> ${message} ${timestamp}`;
+    chatBox.appendChild(messageElement);
+    chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+function getTimeStamp() {
+    const now = new Date();
+    const time = now.toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
+    return `<span style="font-size: 12px; color: #888;">(${time})</span>`;
+}
+
+function clearChat() {
+    chatBox.innerHTML = '';
+}
+
+// Additional features can be added here.
+
+</script>
+</body>
+</html>
+
