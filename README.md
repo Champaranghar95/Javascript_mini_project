@@ -57,7 +57,7 @@ Password generation logic adapted from Password Generator Library.
 Quote generation inspired by Quote API.
 Demo:
 Link to Live Demo
-Feel free to modify and enhance the project according to your needs. If you have any questions or suggestions, please open an issue or contact email@example.com.
+Feel free to modify and enhance the project according to your needs. If you have any questions or suggestions, please open an issue or contact Champaranghar95@gmail.com.
 
 
 
