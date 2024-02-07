@@ -20,7 +20,7 @@ Clone the repository:
 
 bash
 Copy code
-git clone https://github.com/yourusername/project.git
+git clone https://champaranghar95.github.io/Javascript_mini_project/
 Navigate to the project directory:
 
 bash
